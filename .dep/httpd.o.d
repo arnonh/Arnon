@@ -1,4 +1,9 @@
-build/obj/web.o: web/web.c ../../chibios/os/kernel/include/ch.h chconf.h \
+build/obj/httpd.o: httpserver_raw/httpd.c httpserver_raw/httpd.h \
+ ../../chibios/ext/lwip/src/include/lwip/opt.h lwipopts.h \
+ ../../chibios/ext/lwip/src/include/lwip/debug.h \
+ ../../chibios/ext/lwip/src/include/lwip/arch.h \
+ ../../chibios/os/various/lwip_bindings/arch/cc.h \
+ ../../chibios/os/kernel/include/ch.h chconf.h \
  ../../chibios/os/ports/GCC/ARMCMx/chtypes.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stddef.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdint.h \
@@ -35,19 +40,19 @@ build/obj/web.o: web/web.c ../../chibios/os/kernel/include/ch.h chconf.h \
  ../../chibios/os/kernel/include/chstreams.h \
  ../../chibios/os/kernel/include/chfiles.h \
  ../../chibios/os/kernel/include/chdebug.h \
- ../../chibios/ext/lwip/src/include/lwip/opt.h lwipopts.h \
- ../../chibios/ext/lwip/src/include/lwip/debug.h \
- ../../chibios/ext/lwip/src/include/lwip/arch.h \
- ../../chibios/os/various/lwip_bindings/arch/cc.h \
- ../../chibios/ext/lwip/src/include/lwip/api.h \
- ../../chibios/ext/lwip/src/include/lwip/netbuf.h \
- ../../chibios/ext/lwip/src/include/lwip/pbuf.h \
  ../../chibios/ext/lwip/src/include/lwip/err.h \
- ../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h \
+ ../../chibios/ext/lwip/src/include/lwip/pbuf.h \
+ ../../chibios/ext/lwip/src/include/lwip/stats.h \
+ ../../chibios/ext/lwip/src/include/lwip/mem.h \
+ ../../chibios/ext/lwip/src/include/lwip/memp.h \
+ ../../chibios/ext/lwip/src/include/lwip/memp_std.h \
+ httpserver_raw/httpd_structs.h \
+ ../../chibios/ext/lwip/src/include/lwip/tcp.h \
+ ../../chibios/ext/lwip/src/include/ipv4/lwip/ip.h \
  ../../chibios/ext/lwip/src/include/lwip/def.h \
- ../../chibios/ext/lwip/src/include/lwip/sys.h \
- ../../chibios/os/various/lwip_bindings/arch/sys_arch.h web/inc/fs.h \
- web/web.h \
+ ../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h \
+ ../../chibios/ext/lwip/src/include/lwip/netif.h \
+ ../../chibios/ext/lwip/src/include/ipv4/lwip/icmp.h httpserver_raw/fs.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/string.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/_ansi.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/reent.h \
@@ -56,9 +61,21 @@ build/obj/web.o: web/web.c ../../chibios/os/kernel/include/ch.h chconf.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/_default_types.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/lock.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/string.h \
- ../../chibios/os/kernel/include/chregistry.h \
- ../../chibios/os/various/chprintf.h \
- ../../chibios/os/hal/include/io_channel.h
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdlib.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/stdlib.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/alloca.h
+
+httpserver_raw/httpd.h:
+
+../../chibios/ext/lwip/src/include/lwip/opt.h:
+
+lwipopts.h:
+
+../../chibios/ext/lwip/src/include/lwip/debug.h:
+
+../../chibios/ext/lwip/src/include/lwip/arch.h:
+
+../../chibios/os/various/lwip_bindings/arch/cc.h:
 
 ../../chibios/os/kernel/include/ch.h:
 
@@ -136,35 +153,33 @@ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-no
 
 ../../chibios/os/kernel/include/chdebug.h:
 
-../../chibios/ext/lwip/src/include/lwip/opt.h:
-
-lwipopts.h:
-
-../../chibios/ext/lwip/src/include/lwip/debug.h:
-
-../../chibios/ext/lwip/src/include/lwip/arch.h:
-
-../../chibios/os/various/lwip_bindings/arch/cc.h:
-
-../../chibios/ext/lwip/src/include/lwip/api.h:
-
-../../chibios/ext/lwip/src/include/lwip/netbuf.h:
+../../chibios/ext/lwip/src/include/lwip/err.h:
 
 ../../chibios/ext/lwip/src/include/lwip/pbuf.h:
 
-../../chibios/ext/lwip/src/include/lwip/err.h:
+../../chibios/ext/lwip/src/include/lwip/stats.h:
 
-../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h:
+../../chibios/ext/lwip/src/include/lwip/mem.h:
+
+../../chibios/ext/lwip/src/include/lwip/memp.h:
+
+../../chibios/ext/lwip/src/include/lwip/memp_std.h:
+
+httpserver_raw/httpd_structs.h:
+
+../../chibios/ext/lwip/src/include/lwip/tcp.h:
+
+../../chibios/ext/lwip/src/include/ipv4/lwip/ip.h:
 
 ../../chibios/ext/lwip/src/include/lwip/def.h:
 
-../../chibios/ext/lwip/src/include/lwip/sys.h:
+../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h:
 
-../../chibios/os/various/lwip_bindings/arch/sys_arch.h:
+../../chibios/ext/lwip/src/include/lwip/netif.h:
 
-web/inc/fs.h:
+../../chibios/ext/lwip/src/include/ipv4/lwip/icmp.h:
 
-web/web.h:
+httpserver_raw/fs.h:
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/string.h:
 
@@ -182,8 +197,8 @@ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-no
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/string.h:
 
-../../chibios/os/kernel/include/chregistry.h:
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdlib.h:
 
-../../chibios/os/various/chprintf.h:
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/stdlib.h:
 
-../../chibios/os/hal/include/io_channel.h:
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/alloca.h:

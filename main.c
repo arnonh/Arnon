@@ -29,7 +29,7 @@
 #include "lwipthread.h"
 #include <lwip/ip_addr.h>
 
-#include "web/web.h"
+//#include "web/web.h"
 #include "socket/socket.h"
 
 #include "ff.h"
@@ -41,7 +41,7 @@
 #include "my/myADC.h"
 #include "my/myMisc.h"
 
-
+#include "httpserver_raw/httpd.h"
 
 
 
@@ -310,21 +310,16 @@ static const ShellConfig shell_cfg1 = {
 };
 
 
-///*
-// * Green LED blinker thread, times are in milliseconds.
-// */
-//static WORKING_AREA(waThread1, 128);
-//static msg_t Thread1(void *arg) {
-//
-//  (void)arg;
-//  chRegSetThreadName("blinker");
-//  while (TRUE) {
-//    palClearPad(GPIOD, GPIOD_LED6);
-//    chThdSleepMilliseconds(500);
-//    palSetPad(GPIOD, GPIOD_LED6);
-//    chThdSleepMilliseconds(500);
-//  }
-//}
+/*
+ * Green LED blinker thread, times are in milliseconds.
+ */
+static WORKING_AREA(waThread1, 128);
+static msg_t Thread1(void *arg) {
+
+  (void)arg;
+  chRegSetThreadName("httpserver_raw");
+  httpd_init();
+}
 
 
 /*
@@ -442,7 +437,7 @@ int main(void) {
   /*
    * Creates the blinker thread.
    */
-//  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
 
 //TODO DHCP
 
@@ -466,8 +461,8 @@ ip_opts.macaddress = macAddress;
   /*
    * Creates the HTTP thread (it changes priority internally).
    */
-  chThdCreateStatic(wa_http_server, sizeof(wa_http_server), NORMALPRIO + 1,
-                    http_server, NULL);
+//  chThdCreateStatic(wa_http_server, sizeof(wa_http_server), NORMALPRIO + 1,
+//                    http_server, NULL);
   /*
    * Creates the HTTP thread (it changes priority internally).
    */

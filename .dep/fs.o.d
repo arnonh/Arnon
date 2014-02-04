@@ -1,4 +1,4 @@
-build/obj/fs.o: web/src/fs.c \
+build/obj/fs.o: httpserver_raw/fs.c \
  ../../chibios/ext/lwip/src/include/lwip/opt.h lwipopts.h \
  ../../chibios/ext/lwip/src/include/lwip/debug.h \
  ../../chibios/ext/lwip/src/include/lwip/arch.h \
@@ -40,8 +40,8 @@ build/obj/fs.o: web/src/fs.c \
  ../../chibios/os/kernel/include/chstreams.h \
  ../../chibios/os/kernel/include/chfiles.h \
  ../../chibios/os/kernel/include/chdebug.h \
- ../../chibios/ext/lwip/src/include/lwip/def.h web/inc/fs.h \
- web/inc/fsdata.h web/inc/fs.h \
+ ../../chibios/ext/lwip/src/include/lwip/def.h httpserver_raw/fs.h \
+ ../../chibios/ext/lwip/src/include/lwip/err.h httpserver_raw/fsdata.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/string.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/_ansi.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/reent.h \
@@ -50,7 +50,7 @@ build/obj/fs.o: web/src/fs.c \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/_default_types.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/lock.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/string.h \
- web/src/fsdata.c
+ httpserver_raw/fsdata.c
 
 ../../chibios/ext/lwip/src/include/lwip/opt.h:
 
@@ -140,11 +140,11 @@ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-no
 
 ../../chibios/ext/lwip/src/include/lwip/def.h:
 
-web/inc/fs.h:
+httpserver_raw/fs.h:
 
-web/inc/fsdata.h:
+../../chibios/ext/lwip/src/include/lwip/err.h:
 
-web/inc/fs.h:
+httpserver_raw/fsdata.h:
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/string.h:
 
@@ -162,4 +162,4 @@ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-no
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/string.h:
 
-web/src/fsdata.c:
+httpserver_raw/fsdata.c:

@@ -94,9 +94,11 @@ build/obj/main.o: main.c \
  ../../chibios/ext/lwip/src/include/lwip/arch.h \
  ../../chibios/os/various/lwip_bindings/arch/cc.h \
  ../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h \
- ../../chibios/ext/lwip/src/include/lwip/def.h web/web.h socket/socket.h \
+ ../../chibios/ext/lwip/src/include/lwip/def.h socket/socket.h \
  ../../chibios/ext/fatfs/src/ff.h ../../chibios/ext/fatfs/src/integer.h \
- ffconf.h console/ansi.h console/cmd.h my/myPWM.h my/myADC.h my/myMisc.h
+ ffconf.h console/ansi.h console/cmd.h my/myPWM.h my/myADC.h my/myMisc.h \
+ httpserver_raw/httpd.h ../../chibios/ext/lwip/src/include/lwip/err.h \
+ ../../chibios/ext/lwip/src/include/lwip/pbuf.h
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdio.h:
 
@@ -314,8 +316,6 @@ lwipopts.h:
 
 ../../chibios/ext/lwip/src/include/lwip/def.h:
 
-web/web.h:
-
 socket/socket.h:
 
 ../../chibios/ext/fatfs/src/ff.h:
@@ -333,3 +333,9 @@ my/myPWM.h:
 my/myADC.h:
 
 my/myMisc.h:
+
+httpserver_raw/httpd.h:
+
+../../chibios/ext/lwip/src/include/lwip/err.h:
+
+../../chibios/ext/lwip/src/include/lwip/pbuf.h:
