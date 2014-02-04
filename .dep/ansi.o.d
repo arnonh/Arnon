@@ -1,27 +1,13 @@
-build/obj/main.o: main.c \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdio.h \
+build/obj/ansi.o: console/ansi.c ../../chibios/os/kernel/include/ch.h \
+ chconf.h ../../chibios/os/ports/GCC/ARMCMx/chtypes.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stddef.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdint.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdint.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/_ansi.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/newlib.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/config.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/ieeefp.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/features.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stddef.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdarg.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/reent.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/_ansi.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/_types.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/_types.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/_default_types.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/lock.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/types.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/types.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/stdio.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/string.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/string.h \
- ../../chibios/os/kernel/include/ch.h chconf.h \
- ../../chibios/os/ports/GCC/ARMCMx/chtypes.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdint.h \
- c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdint.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdbool.h \
  ../../chibios/os/kernel/include/chlists.h \
  ../../chibios/os/ports/GCC/ARMCMx/chcore.h \
@@ -81,19 +67,21 @@ build/obj/main.o: main.c \
  ../../chibios/os/hal/platforms/STM32/OTGv1/usb_lld.h \
  ../../chibios/os/hal/platforms/STM32/OTGv1/stm32_otg.h \
  ../../chibios/os/hal/include/mmc_spi.h \
- ../../chibios/os/hal/include/serial_usb.h ../../chibios/test/test.h \
+ ../../chibios/os/hal/include/serial_usb.h \
  ../../chibios/os/various/chprintf.h ../../chibios/os/various/shell.h \
- CDC/usbcfg.h ../../chibios/os/various/lwip_bindings/lwipthread.h \
- ../../chibios/ext/lwip/src/include/lwip/opt.h lwipopts.h \
- ../../chibios/ext/lwip/src/include/lwip/debug.h \
- ../../chibios/ext/lwip/src/include/lwip/arch.h \
- ../../chibios/os/various/lwip_bindings/arch/cc.h \
- ../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h \
- ../../chibios/ext/lwip/src/include/lwip/def.h web/web.h socket/socket.h \
- ../../chibios/ext/fatfs/src/ff.h ../../chibios/ext/fatfs/src/integer.h \
- ffconf.h console/ansi.h console/cmd.h
+ console/ansi.h console/cmd.h
 
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdio.h:
+../../chibios/os/kernel/include/ch.h:
+
+chconf.h:
+
+../../chibios/os/ports/GCC/ARMCMx/chtypes.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stddef.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdint.h:
+
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdint.h:
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/_ansi.h:
 
@@ -104,42 +92,6 @@ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-no
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/ieeefp.h:
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/features.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stddef.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdarg.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/reent.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/_ansi.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/_types.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/_types.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/_default_types.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/lock.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/types.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/types.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/stdio.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/string.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/string.h:
-
-../../chibios/os/kernel/include/ch.h:
-
-chconf.h:
-
-../../chibios/os/ports/GCC/ARMCMx/chtypes.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdint.h:
-
-c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdint.h:
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdbool.h:
 
@@ -277,39 +229,9 @@ mcuconf.h:
 
 ../../chibios/os/hal/include/serial_usb.h:
 
-../../chibios/test/test.h:
-
 ../../chibios/os/various/chprintf.h:
 
 ../../chibios/os/various/shell.h:
-
-CDC/usbcfg.h:
-
-../../chibios/os/various/lwip_bindings/lwipthread.h:
-
-../../chibios/ext/lwip/src/include/lwip/opt.h:
-
-lwipopts.h:
-
-../../chibios/ext/lwip/src/include/lwip/debug.h:
-
-../../chibios/ext/lwip/src/include/lwip/arch.h:
-
-../../chibios/os/various/lwip_bindings/arch/cc.h:
-
-../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h:
-
-../../chibios/ext/lwip/src/include/lwip/def.h:
-
-web/web.h:
-
-socket/socket.h:
-
-../../chibios/ext/fatfs/src/ff.h:
-
-../../chibios/ext/fatfs/src/integer.h:
-
-ffconf.h:
 
 console/ansi.h:
 
