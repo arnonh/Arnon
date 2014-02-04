@@ -72,7 +72,8 @@ build/obj/myUSB.o: CDC/myUSB.c ../../chibios/os/kernel/include/ch.h \
  ../../chibios/os/hal/platforms/STM32/OTGv1/usb_lld.h \
  ../../chibios/os/hal/platforms/STM32/OTGv1/stm32_otg.h \
  ../../chibios/os/hal/include/mmc_spi.h \
- ../../chibios/os/hal/include/serial_usb.h
+ ../../chibios/os/hal/include/serial_usb.h \
+ ../../chibios/os/various/shell.h CDC/myUSB.h CDC/usbdescriptor.h
 
 ../../chibios/os/kernel/include/ch.h:
 
@@ -239,3 +240,9 @@ mcuconf.h:
 ../../chibios/os/hal/include/mmc_spi.h:
 
 ../../chibios/os/hal/include/serial_usb.h:
+
+../../chibios/os/various/shell.h:
+
+CDC/myUSB.h:
+
+CDC/usbdescriptor.h:

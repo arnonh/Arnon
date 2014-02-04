@@ -47,9 +47,9 @@
 
 
 
-/* Virtual serial port over USB.*/
-SerialUSBDriver SDU1;
-
+///* Virtual serial port over USB.*/
+//SerialUSBDriver SDU1;
+//
 
 /*===========================================================================*/
 /* Card insertion monitor.                                                   */
@@ -310,21 +310,21 @@ static const ShellConfig shell_cfg1 = {
 };
 
 
-/*
- * Green LED blinker thread, times are in milliseconds.
- */
-static WORKING_AREA(waThread1, 128);
-static msg_t Thread1(void *arg) {
-
-  (void)arg;
-  chRegSetThreadName("blinker");
-  while (TRUE) {
-    palClearPad(GPIOD, GPIOD_LED6);
-    chThdSleepMilliseconds(500);
-    palSetPad(GPIOD, GPIOD_LED6);
-    chThdSleepMilliseconds(500);
-  }
-}
+///*
+// * Green LED blinker thread, times are in milliseconds.
+// */
+//static WORKING_AREA(waThread1, 128);
+//static msg_t Thread1(void *arg) {
+//
+//  (void)arg;
+//  chRegSetThreadName("blinker");
+//  while (TRUE) {
+//    palClearPad(GPIOD, GPIOD_LED6);
+//    chThdSleepMilliseconds(500);
+//    palSetPad(GPIOD, GPIOD_LED6);
+//    chThdSleepMilliseconds(500);
+//  }
+//}
 
 
 /*
@@ -401,10 +401,10 @@ int main(void) {
 
 
 
+  myUSBinit();
 
 
-
-  sduStart(&SDU1, &serusbcfg);
+  //sduStart(&SDU1, &serusbcfg);
 
 
   /*
@@ -412,15 +412,15 @@ int main(void) {
    * Note, a delay is inserted in order to not have to disconnect the cable
    * after a reset.
    */
-  usbDisconnectBus(serusbcfg.usbp);
-  chThdSleepMilliseconds(1500);
-  usbStart(serusbcfg.usbp, &usbcfg);
-  usbConnectBus(serusbcfg.usbp);
+//  usbDisconnectBus(serusbcfg.usbp);
+//  chThdSleepMilliseconds(1500);
+//  usbStart(serusbcfg.usbp, &usbcfg);
+//  usbConnectBus(serusbcfg.usbp);
 
   /*
    * Shell manager initialization.
    */
-  shellInit();
+//  shellInit();
 
 
 

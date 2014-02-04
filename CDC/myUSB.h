@@ -17,8 +17,12 @@ limitations under the License.
 #ifndef _USBCFG_H_
 #define _USBCFG_H_
 
-extern const USBConfig usbcfg;
-extern SerialUSBConfig serusbcfg;
+extern SerialUSBDriver SDU1;
+
+void myUSBinit(void);
+int isUsbActive(void);
+
+
 
 #endif /* _USBCFG_H_ */
 
