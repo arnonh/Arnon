@@ -17,23 +17,43 @@
 
 
 
-void cmd_mem(BaseSequentialStream *chp, int argc, char *argv[]) {
-  (void)argv;
-  (void)argc;
-  size_t n;
-  n=chCoreStatus();
-  chprintf(chp, "Free: ");
-  if (n<500) {
-	  chprintf(chp, "%s", "\e[1;30;41m");
-  }
-  chprintf(chp,"%9u",n);
-  if (n<500) {
-	  chprintf(chp, "%s", "\e[0m\r\n");
-  }
-  chprintf(chp,"\r\n");
-}
+//void cmd_mem(BaseSequentialStream *chp, int argc, char *argv[]) {
+//  (void)argv;
+//  (void)argc;
+//  size_t n;
+//  n=chCoreStatus();
+//  chprintf(chp, "Free: ");
+//  if (n<500) {
+//	  chprintf(chp, "%s", "\e[1;30;41m");
+//  }
+//  chprintf(chp,"%9u",n);
+//  if (n<500) {
+//	  chprintf(chp, "%s", "\e[0m\r\n");
+//  }
+//  chprintf(chp,"\r\n");
+//}
 
 void cmd_threads(BaseSequentialStream *chp, int argc, char *argv[]) {
+//  static const char *states[] = {THD_STATE_NAMES};
+//  Thread *tp;
+//
+//  (void)argv;
+//  if (argc > 0)
+//  {
+//     chprintf(chp, "Usage: threads\r\n");
+//     return;
+//  }
+//  chprintf(chp, "%10s %10s %10s %6s %6s %11s %7s\r\n",
+//           "name", "add", "stack", "prio", "refs", "state", "time");
+//  tp = chRegFirstThread();
+//  do
+//  {
+//     chprintf(chp, "%10s %.10lx %.10lx %6lu %6lu %11s %7lu\r\n",
+//              (uint32_t)tp->p_name, (uint32_t)tp, (uint32_t)tp->p_ctx.r13,
+//              (uint32_t)tp->p_prio, (uint32_t)(tp->p_refs - 1),
+//              states[tp->p_state], (uint32_t)tp->p_time);
+//     tp = chRegNextThread(tp);
+//  } while (tp != NULL);
   static const char *states[] = {THD_STATE_NAMES};
   Thread *tp;
 

@@ -66,13 +66,18 @@ build/obj/main.o: main.c \
  ../../chibios/os/hal/include/mmcsd.h ../../chibios/os/hal/include/tm.h \
  ../../chibios/os/hal/include/pal.h \
  ../../chibios/os/hal/platforms/STM32/GPIOv2/pal_lld.h \
- ../../chibios/os/hal/include/adc.h ../../chibios/os/hal/include/can.h \
- ../../chibios/os/hal/include/ext.h ../../chibios/os/hal/include/gpt.h \
- ../../chibios/os/hal/include/i2c.h ../../chibios/os/hal/include/icu.h \
+ ../../chibios/os/hal/include/adc.h \
+ ../../chibios/os/hal/platforms/STM32F4xx/adc_lld.h \
+ ../../chibios/os/hal/include/can.h ../../chibios/os/hal/include/ext.h \
+ ../../chibios/os/hal/include/gpt.h ../../chibios/os/hal/include/i2c.h \
+ ../../chibios/os/hal/include/icu.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/icu_lld.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/stm32_tim.h \
  ../../chibios/os/hal/include/mac.h \
  ../../chibios/os/hal/platforms/STM32/mac_lld.h \
- ../../chibios/os/hal/include/pwm.h ../../chibios/os/hal/include/rtc.h \
- ../../chibios/os/hal/include/serial.h \
+ ../../chibios/os/hal/include/pwm.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.h \
+ ../../chibios/os/hal/include/rtc.h ../../chibios/os/hal/include/serial.h \
  ../../chibios/os/hal/platforms/STM32/USARTv1/serial_lld.h \
  ../../chibios/os/hal/include/sdc.h \
  ../../chibios/os/hal/platforms/STM32/sdc_lld.h \
@@ -83,7 +88,7 @@ build/obj/main.o: main.c \
  ../../chibios/os/hal/include/mmc_spi.h \
  ../../chibios/os/hal/include/serial_usb.h ../../chibios/test/test.h \
  ../../chibios/os/various/chprintf.h ../../chibios/os/various/shell.h \
- CDC/usbcfg.h ../../chibios/os/various/lwip_bindings/lwipthread.h \
+ CDC/myUSB.h ../../chibios/os/various/lwip_bindings/lwipthread.h \
  ../../chibios/ext/lwip/src/include/lwip/opt.h lwipopts.h \
  ../../chibios/ext/lwip/src/include/lwip/debug.h \
  ../../chibios/ext/lwip/src/include/lwip/arch.h \
@@ -91,7 +96,7 @@ build/obj/main.o: main.c \
  ../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h \
  ../../chibios/ext/lwip/src/include/lwip/def.h web/web.h socket/socket.h \
  ../../chibios/ext/fatfs/src/ff.h ../../chibios/ext/fatfs/src/integer.h \
- ffconf.h console/ansi.h console/cmd.h
+ ffconf.h console/ansi.h console/cmd.h my/myPWM.h my/myADC.h my/myMisc.h
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdio.h:
 
@@ -237,6 +242,8 @@ mcuconf.h:
 
 ../../chibios/os/hal/include/adc.h:
 
+../../chibios/os/hal/platforms/STM32F4xx/adc_lld.h:
+
 ../../chibios/os/hal/include/can.h:
 
 ../../chibios/os/hal/include/ext.h:
@@ -247,11 +254,17 @@ mcuconf.h:
 
 ../../chibios/os/hal/include/icu.h:
 
+../../chibios/os/hal/platforms/STM32/TIMv1/icu_lld.h:
+
+../../chibios/os/hal/platforms/STM32/TIMv1/stm32_tim.h:
+
 ../../chibios/os/hal/include/mac.h:
 
 ../../chibios/os/hal/platforms/STM32/mac_lld.h:
 
 ../../chibios/os/hal/include/pwm.h:
+
+../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.h:
 
 ../../chibios/os/hal/include/rtc.h:
 
@@ -283,7 +296,7 @@ mcuconf.h:
 
 ../../chibios/os/various/shell.h:
 
-CDC/usbcfg.h:
+CDC/myUSB.h:
 
 ../../chibios/os/various/lwip_bindings/lwipthread.h:
 
@@ -314,3 +327,9 @@ ffconf.h:
 console/ansi.h:
 
 console/cmd.h:
+
+my/myPWM.h:
+
+my/myADC.h:
+
+my/myMisc.h:

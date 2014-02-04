@@ -1,7 +1,5 @@
-build/obj/lwipthread.o: \
- ../../chibios/os/various/lwip_bindings/lwipthread.c \
- ../../chibios/os/kernel/include/ch.h chconf.h \
- ../../chibios/os/ports/GCC/ARMCMx/chtypes.h \
+build/obj/myUSB.o: CDC/myUSB.c ../../chibios/os/kernel/include/ch.h \
+ chconf.h ../../chibios/os/ports/GCC/ARMCMx/chtypes.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stddef.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdint.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdint.h \
@@ -74,35 +72,7 @@ build/obj/lwipthread.o: \
  ../../chibios/os/hal/platforms/STM32/OTGv1/usb_lld.h \
  ../../chibios/os/hal/platforms/STM32/OTGv1/stm32_otg.h \
  ../../chibios/os/hal/include/mmc_spi.h \
- ../../chibios/os/hal/include/serial_usb.h \
- ../../chibios/os/various/evtimer.h \
- ../../chibios/os/various/lwip_bindings/lwipthread.h \
- ../../chibios/ext/lwip/src/include/lwip/opt.h lwipopts.h \
- ../../chibios/ext/lwip/src/include/lwip/debug.h \
- ../../chibios/ext/lwip/src/include/lwip/arch.h \
- ../../chibios/os/various/lwip_bindings/arch/cc.h \
- ../../chibios/ext/lwip/src/include/lwip/def.h \
- ../../chibios/ext/lwip/src/include/lwip/mem.h \
- ../../chibios/ext/lwip/src/include/lwip/pbuf.h \
- ../../chibios/ext/lwip/src/include/lwip/err.h \
- ../../chibios/ext/lwip/src/include/lwip/sys.h \
- ../../chibios/os/various/lwip_bindings/arch/sys_arch.h \
- ../../chibios/ext/lwip/src/include/lwip/stats.h \
- ../../chibios/ext/lwip/src/include/lwip/memp.h \
- ../../chibios/ext/lwip/src/include/lwip/memp_std.h \
- ../../chibios/ext/lwip/src/include/lwip/snmp.h \
- ../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h \
- ../../chibios/ext/lwip/src/include/lwip/tcpip.h \
- ../../chibios/ext/lwip/src/include/lwip/api_msg.h \
- ../../chibios/ext/lwip/src/include/ipv4/lwip/igmp.h \
- ../../chibios/ext/lwip/src/include/lwip/netif.h \
- ../../chibios/ext/lwip/src/include/lwip/api.h \
- ../../chibios/ext/lwip/src/include/lwip/netbuf.h \
- ../../chibios/ext/lwip/src/include/lwip/netifapi.h \
- ../../chibios/ext/lwip/src/include/lwip/timers.h \
- ../../chibios/ext/lwip/src/include/netif/etharp.h \
- ../../chibios/ext/lwip/src/include/ipv4/lwip/ip.h \
- ../../chibios/ext/lwip/src/include/netif/ppp_oe.h
+ ../../chibios/os/hal/include/serial_usb.h
 
 ../../chibios/os/kernel/include/ch.h:
 
@@ -269,61 +239,3 @@ mcuconf.h:
 ../../chibios/os/hal/include/mmc_spi.h:
 
 ../../chibios/os/hal/include/serial_usb.h:
-
-../../chibios/os/various/evtimer.h:
-
-../../chibios/os/various/lwip_bindings/lwipthread.h:
-
-../../chibios/ext/lwip/src/include/lwip/opt.h:
-
-lwipopts.h:
-
-../../chibios/ext/lwip/src/include/lwip/debug.h:
-
-../../chibios/ext/lwip/src/include/lwip/arch.h:
-
-../../chibios/os/various/lwip_bindings/arch/cc.h:
-
-../../chibios/ext/lwip/src/include/lwip/def.h:
-
-../../chibios/ext/lwip/src/include/lwip/mem.h:
-
-../../chibios/ext/lwip/src/include/lwip/pbuf.h:
-
-../../chibios/ext/lwip/src/include/lwip/err.h:
-
-../../chibios/ext/lwip/src/include/lwip/sys.h:
-
-../../chibios/os/various/lwip_bindings/arch/sys_arch.h:
-
-../../chibios/ext/lwip/src/include/lwip/stats.h:
-
-../../chibios/ext/lwip/src/include/lwip/memp.h:
-
-../../chibios/ext/lwip/src/include/lwip/memp_std.h:
-
-../../chibios/ext/lwip/src/include/lwip/snmp.h:
-
-../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h:
-
-../../chibios/ext/lwip/src/include/lwip/tcpip.h:
-
-../../chibios/ext/lwip/src/include/lwip/api_msg.h:
-
-../../chibios/ext/lwip/src/include/ipv4/lwip/igmp.h:
-
-../../chibios/ext/lwip/src/include/lwip/netif.h:
-
-../../chibios/ext/lwip/src/include/lwip/api.h:
-
-../../chibios/ext/lwip/src/include/lwip/netbuf.h:
-
-../../chibios/ext/lwip/src/include/lwip/netifapi.h:
-
-../../chibios/ext/lwip/src/include/lwip/timers.h:
-
-../../chibios/ext/lwip/src/include/netif/etharp.h:
-
-../../chibios/ext/lwip/src/include/ipv4/lwip/ip.h:
-
-../../chibios/ext/lwip/src/include/netif/ppp_oe.h:

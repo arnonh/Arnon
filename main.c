@@ -23,7 +23,7 @@
 
 #include "chprintf.h"
 #include "shell.h"
-#include "CDC/usbcfg.h"
+#include "CDC/myUSB.h"
 
 
 #include "lwipthread.h"
@@ -36,6 +36,16 @@
 
 #include "console/ansi.h"
 #include "console/cmd.h"
+
+#include "my/myPWM.h"
+#include "my/myADC.h"
+#include "my/myMisc.h"
+
+
+
+
+
+
 
 /* Virtual serial port over USB.*/
 SerialUSBDriver SDU1;
@@ -267,6 +277,30 @@ static const ShellCommand commands[] = {
     {"draw",cmd_draw},
     {"test", cmd_test},
     {"tree", cmd_tree},
+    {"toggle", cmd_toggle},
+    {"t", cmd_toggle},
+    {"blinkspeed", cmd_blinkspeed},
+    {"bs", cmd_blinkspeed},
+    {"cycle", cmd_cycle},
+    {"c", cmd_cycle},
+    {"ramp", cmd_ramp},
+    {"r", cmd_ramp},
+    {"measure", cmd_measure},
+    {"m", cmd_measure},
+    {"measureAnalog", cmd_measureA},
+    {"ma", cmd_measureA},
+    {"vref", cmd_Vref},
+    {"v", cmd_Vref},
+    {"temperature", cmd_Temperature},
+    {"te", cmd_Temperature},
+    {"measureDirect", cmd_measureDirect},
+    {"md", cmd_measureDirect},
+    {"measureContinuous", cmd_measureCont},
+    {"mc", cmd_measureCont},
+    {"readContinuousData", cmd_measureRead},
+    {"rd", cmd_measureRead},
+    {"stopContinuous", cmd_measureStop},
+    {"sc", cmd_measureStop},
     {NULL,NULL}
 };
 
@@ -352,7 +386,26 @@ int main(void) {
    * Initializes a serial-over-USB CDC driver.
    */
   sduObjectInit(&SDU1);
+
+
+  /*
+* Activate custom stuff
+*/
+  mypwmInit();
+  myADCinit();
+
+  /*
+* Creates the blinker thread.
+*/
+  startBlinker();
+
+
+
+
+
+
   sduStart(&SDU1, &serusbcfg);
+
 
   /*
    * Activates the USB driver and then the USB bus pull-up on D+.
@@ -370,23 +423,26 @@ int main(void) {
   shellInit();
 
 
-  /*
-   * Activates the serial driver 6 using the driver default configuration.
-   */
-  sdStart(&SD6, NULL);
+
   sdcStart(&SDCD1, NULL);
+
 
   /*
    * Activates the card insertion monitor.
    */
   tmr_init(&SDCD1);
 
+
+  /*
+   * Activates the serial driver 6 using the driver default configuration.
+   */
+  sdStart(&SD6, NULL);
   palSetPadMode(GPIOC, 6, PAL_MODE_ALTERNATE(8));
   palSetPadMode(GPIOC, 7, PAL_MODE_ALTERNATE(8));
   /*
    * Creates the blinker thread.
    */
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+//  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
 
 //TODO DHCP
 

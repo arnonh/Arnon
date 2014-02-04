@@ -96,9 +96,13 @@ CSRC = $(PORTSRC) \
        $(CHIBIOS)/os/various/chprintf.c \
        $(CHIBIOS)/os/various/shell.c \
        web/web.c main.c  web/src/fs.c \
-       socket/socket.c CDC/usbcfg.c \
-       console/ansi.c console/cmd.c
-
+       socket/socket.c CDC/myUSB.c \
+       console/ansi.c console/cmd.c \
+       my/myPWM.c \
+       my/myADC.c \
+       my/myMisc.c
+       
+       
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
 CPPSRC =

@@ -61,13 +61,18 @@ build/obj/usb.o: ../../chibios/os/hal/src/usb.c \
  ../../chibios/os/hal/include/mmcsd.h ../../chibios/os/hal/include/tm.h \
  ../../chibios/os/hal/include/pal.h \
  ../../chibios/os/hal/platforms/STM32/GPIOv2/pal_lld.h \
- ../../chibios/os/hal/include/adc.h ../../chibios/os/hal/include/can.h \
- ../../chibios/os/hal/include/ext.h ../../chibios/os/hal/include/gpt.h \
- ../../chibios/os/hal/include/i2c.h ../../chibios/os/hal/include/icu.h \
+ ../../chibios/os/hal/include/adc.h \
+ ../../chibios/os/hal/platforms/STM32F4xx/adc_lld.h \
+ ../../chibios/os/hal/include/can.h ../../chibios/os/hal/include/ext.h \
+ ../../chibios/os/hal/include/gpt.h ../../chibios/os/hal/include/i2c.h \
+ ../../chibios/os/hal/include/icu.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/icu_lld.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/stm32_tim.h \
  ../../chibios/os/hal/include/mac.h \
  ../../chibios/os/hal/platforms/STM32/mac_lld.h \
- ../../chibios/os/hal/include/pwm.h ../../chibios/os/hal/include/rtc.h \
- ../../chibios/os/hal/include/serial.h \
+ ../../chibios/os/hal/include/pwm.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.h \
+ ../../chibios/os/hal/include/rtc.h ../../chibios/os/hal/include/serial.h \
  ../../chibios/os/hal/platforms/STM32/USARTv1/serial_lld.h \
  ../../chibios/os/hal/include/sdc.h \
  ../../chibios/os/hal/platforms/STM32/sdc_lld.h \
@@ -213,6 +218,8 @@ mcuconf.h:
 
 ../../chibios/os/hal/include/adc.h:
 
+../../chibios/os/hal/platforms/STM32F4xx/adc_lld.h:
+
 ../../chibios/os/hal/include/can.h:
 
 ../../chibios/os/hal/include/ext.h:
@@ -223,11 +230,17 @@ mcuconf.h:
 
 ../../chibios/os/hal/include/icu.h:
 
+../../chibios/os/hal/platforms/STM32/TIMv1/icu_lld.h:
+
+../../chibios/os/hal/platforms/STM32/TIMv1/stm32_tim.h:
+
 ../../chibios/os/hal/include/mac.h:
 
 ../../chibios/os/hal/platforms/STM32/mac_lld.h:
 
 ../../chibios/os/hal/include/pwm.h:
+
+../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.h:
 
 ../../chibios/os/hal/include/rtc.h:
 
