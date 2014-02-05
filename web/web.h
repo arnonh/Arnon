@@ -33,7 +33,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #ifndef WEB_THREAD_PORT
-#define WEB_THREAD_PORT 80
+#define WEB_THREAD_PORT 8080
 #endif
 
 #ifndef WEB_THREAD_PRIORITY

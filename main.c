@@ -29,8 +29,8 @@
 #include "lwipthread.h"
 #include <lwip/ip_addr.h>
 
-//#include "web/web.h"
-#include "socket/socket.h"
+#include "web/web.h"
+//#include "socket/socket.h"
 
 #include "ff.h"
 
@@ -43,9 +43,9 @@
 
 #include "httpserver_raw/httpd.h"
 
+#include "netstream/server.h"
 
-
-
+#include "netbios/netbios.h"
 
 ///* Virtual serial port over USB.*/
 //SerialUSBDriver SDU1;
@@ -458,16 +458,22 @@ ip_opts.macaddress = macAddress;
   chThdCreateStatic(wa_lwip_thread, LWIP_THREAD_STACK_SIZE, NORMALPRIO + 1,
                     lwip_thread, &ip_opts);
 
-  /*
-   * Creates the HTTP thread (it changes priority internally).
-   */
+//  /*
+//   * Creates the HTTP thread (it changes priority internally).
+//   */
 //  chThdCreateStatic(wa_http_server, sizeof(wa_http_server), NORMALPRIO + 1,
 //                    http_server, NULL);
+
   /*
    * Creates the HTTP thread (it changes priority internally).
    */
   chThdCreateStatic(wa_socket_server, sizeof(wa_socket_server), NORMALPRIO + 1,
-                    socket_server, NULL);
+                    server_thread, &commands);
+
+
+  netbios_init();
+
+
   /*
    * Normal main() thread activity, in this demo it does nothing except
    * sleeping in a loop and listen for events.

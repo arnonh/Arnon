@@ -43,7 +43,7 @@
 
 /** Set this to 1 to support CGI */
 #ifndef LWIP_HTTPD_CGI
-#define LWIP_HTTPD_CGI            0
+#define LWIP_HTTPD_CGI            1
 #endif
 
 /** Set this to 1 to support SSI (Server-Side-Includes) */
@@ -222,7 +222,7 @@ err_t httpd_post_receive_data(void *connection, struct pbuf *p);
 void httpd_post_finished(void *connection, char *response_uri, u16_t response_uri_len);
 
 #ifndef LWIP_HTTPD_POST_MANUAL_WND
-#define LWIP_HTTPD_POST_MANUAL_WND  0
+#define LWIP_HTTPD_POST_MANUAL_WND  1
 #endif
 
 #if LWIP_HTTPD_POST_MANUAL_WND
