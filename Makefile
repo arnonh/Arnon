@@ -30,7 +30,7 @@ endif
 
 # Enable this if you want to see the full log while compiling.
 ifeq ($(USE_VERBOSE_COMPILE),)
-  USE_VERBOSE_COMPILE = no
+  USE_VERBOSE_COMPILE = NO
 endif
 
 #
@@ -101,9 +101,9 @@ CSRC = $(PORTSRC) \
        my/myPWM.c \
        my/myADC.c \
        my/myMisc.c \
-       httpserver_raw/fs.c httpserver_raw/httpd.c \
+       httpserver_raw/fs.c httpserver_raw/httpd.c httpd_cgi_ssi.c \
        netstream/netstream.c netstream/server.c \
-       netbios/netbios.c
+       netbios/netbios.c 
        #socket/socket.c\
        #web/web.c web/src/fs.c\
        

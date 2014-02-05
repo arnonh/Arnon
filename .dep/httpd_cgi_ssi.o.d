@@ -1,4 +1,8 @@
-build/obj/web.o: web/web.c ../../chibios/os/kernel/include/ch.h chconf.h \
+build/obj/httpd_cgi_ssi.o: httpserver_raw/httpd_cgi_ssi.c \
+ ../../chibios/ext/lwip/src/include/lwip/debug.h \
+ ../../chibios/ext/lwip/src/include/lwip/arch.h \
+ ../../chibios/os/various/lwip_bindings/arch/cc.h \
+ ../../chibios/os/kernel/include/ch.h chconf.h \
  ../../chibios/os/ports/GCC/ARMCMx/chtypes.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stddef.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/include/stdint.h \
@@ -36,18 +40,53 @@ build/obj/web.o: web/web.c ../../chibios/os/kernel/include/ch.h chconf.h \
  ../../chibios/os/kernel/include/chfiles.h \
  ../../chibios/os/kernel/include/chdebug.h \
  ../../chibios/ext/lwip/src/include/lwip/opt.h lwipopts.h \
- ../../chibios/ext/lwip/src/include/lwip/debug.h \
- ../../chibios/ext/lwip/src/include/lwip/arch.h \
- ../../chibios/os/various/lwip_bindings/arch/cc.h \
- ../../chibios/ext/lwip/src/include/lwip/api.h \
- ../../chibios/ext/lwip/src/include/lwip/netbuf.h \
+ httpserver_raw/httpd.h ../../chibios/ext/lwip/src/include/lwip/err.h \
  ../../chibios/ext/lwip/src/include/lwip/pbuf.h \
- ../../chibios/ext/lwip/src/include/lwip/err.h \
- ../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h \
+ ../../chibios/ext/lwip/src/include/lwip/tcp.h \
+ ../../chibios/ext/lwip/src/include/lwip/mem.h \
+ ../../chibios/ext/lwip/src/include/ipv4/lwip/ip.h \
  ../../chibios/ext/lwip/src/include/lwip/def.h \
- ../../chibios/ext/lwip/src/include/lwip/sys.h \
- ../../chibios/os/various/lwip_bindings/arch/sys_arch.h web/inc/fs.h \
- web/web.h \
+ ../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h \
+ ../../chibios/ext/lwip/src/include/lwip/netif.h \
+ ../../chibios/ext/lwip/src/include/ipv4/lwip/icmp.h httpserver_raw/fs.h \
+ ../../chibios/os/hal/include/hal.h \
+ ../../chibios/boards/ST_STM32F4_DISCOVERY/board.h halconf.h mcuconf.h \
+ ../../chibios/os/hal/platforms/STM32F4xx/hal_lld.h \
+ ../../chibios/os/hal/platforms/STM32/stm32.h \
+ ../../chibios/os/hal/platforms/STM32F4xx/stm32f4xx.h \
+ ../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h \
+ ../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmInstr.h \
+ ../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmFunc.h \
+ ../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4_simd.h \
+ ../../chibios/os/hal/platforms/STM32F4xx/stm32_isr.h \
+ ../../chibios/os/hal/platforms/STM32F4xx/stm32_dma.h \
+ ../../chibios/os/hal/platforms/STM32F4xx/stm32_rcc.h \
+ ../../chibios/os/hal/include/io_channel.h \
+ ../../chibios/os/hal/include/io_block.h \
+ ../../chibios/os/hal/include/mmcsd.h ../../chibios/os/hal/include/tm.h \
+ ../../chibios/os/hal/include/pal.h \
+ ../../chibios/os/hal/platforms/STM32/GPIOv2/pal_lld.h \
+ ../../chibios/os/hal/include/adc.h \
+ ../../chibios/os/hal/platforms/STM32F4xx/adc_lld.h \
+ ../../chibios/os/hal/include/can.h ../../chibios/os/hal/include/ext.h \
+ ../../chibios/os/hal/include/gpt.h ../../chibios/os/hal/include/i2c.h \
+ ../../chibios/os/hal/include/icu.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/icu_lld.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/stm32_tim.h \
+ ../../chibios/os/hal/include/mac.h \
+ ../../chibios/os/hal/platforms/STM32/mac_lld.h \
+ ../../chibios/os/hal/include/pwm.h \
+ ../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.h \
+ ../../chibios/os/hal/include/rtc.h ../../chibios/os/hal/include/serial.h \
+ ../../chibios/os/hal/platforms/STM32/USARTv1/serial_lld.h \
+ ../../chibios/os/hal/include/sdc.h \
+ ../../chibios/os/hal/platforms/STM32/sdc_lld.h \
+ ../../chibios/os/hal/include/spi.h ../../chibios/os/hal/include/uart.h \
+ ../../chibios/os/hal/include/usb.h \
+ ../../chibios/os/hal/platforms/STM32/OTGv1/usb_lld.h \
+ ../../chibios/os/hal/platforms/STM32/OTGv1/stm32_otg.h \
+ ../../chibios/os/hal/include/mmc_spi.h \
+ ../../chibios/os/hal/include/serial_usb.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/string.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/_ansi.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/reent.h \
@@ -56,9 +95,15 @@ build/obj/web.o: web/web.c ../../chibios/os/kernel/include/ch.h chconf.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/_default_types.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/lock.h \
  c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/string.h \
- ../../chibios/os/kernel/include/chregistry.h \
- ../../chibios/os/various/chprintf.h \
- ../../chibios/os/hal/include/io_channel.h
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdlib.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/stdlib.h \
+ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/alloca.h
+
+../../chibios/ext/lwip/src/include/lwip/debug.h:
+
+../../chibios/ext/lwip/src/include/lwip/arch.h:
+
+../../chibios/os/various/lwip_bindings/arch/cc.h:
 
 ../../chibios/os/kernel/include/ch.h:
 
@@ -140,31 +185,117 @@ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-no
 
 lwipopts.h:
 
-../../chibios/ext/lwip/src/include/lwip/debug.h:
-
-../../chibios/ext/lwip/src/include/lwip/arch.h:
-
-../../chibios/os/various/lwip_bindings/arch/cc.h:
-
-../../chibios/ext/lwip/src/include/lwip/api.h:
-
-../../chibios/ext/lwip/src/include/lwip/netbuf.h:
-
-../../chibios/ext/lwip/src/include/lwip/pbuf.h:
+httpserver_raw/httpd.h:
 
 ../../chibios/ext/lwip/src/include/lwip/err.h:
 
-../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h:
+../../chibios/ext/lwip/src/include/lwip/pbuf.h:
+
+../../chibios/ext/lwip/src/include/lwip/tcp.h:
+
+../../chibios/ext/lwip/src/include/lwip/mem.h:
+
+../../chibios/ext/lwip/src/include/ipv4/lwip/ip.h:
 
 ../../chibios/ext/lwip/src/include/lwip/def.h:
 
-../../chibios/ext/lwip/src/include/lwip/sys.h:
+../../chibios/ext/lwip/src/include/ipv4/lwip/ip_addr.h:
 
-../../chibios/os/various/lwip_bindings/arch/sys_arch.h:
+../../chibios/ext/lwip/src/include/lwip/netif.h:
 
-web/inc/fs.h:
+../../chibios/ext/lwip/src/include/ipv4/lwip/icmp.h:
 
-web/web.h:
+httpserver_raw/fs.h:
+
+../../chibios/os/hal/include/hal.h:
+
+../../chibios/boards/ST_STM32F4_DISCOVERY/board.h:
+
+halconf.h:
+
+mcuconf.h:
+
+../../chibios/os/hal/platforms/STM32F4xx/hal_lld.h:
+
+../../chibios/os/hal/platforms/STM32/stm32.h:
+
+../../chibios/os/hal/platforms/STM32F4xx/stm32f4xx.h:
+
+../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h:
+
+../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmInstr.h:
+
+../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmFunc.h:
+
+../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4_simd.h:
+
+../../chibios/os/hal/platforms/STM32F4xx/stm32_isr.h:
+
+../../chibios/os/hal/platforms/STM32F4xx/stm32_dma.h:
+
+../../chibios/os/hal/platforms/STM32F4xx/stm32_rcc.h:
+
+../../chibios/os/hal/include/io_channel.h:
+
+../../chibios/os/hal/include/io_block.h:
+
+../../chibios/os/hal/include/mmcsd.h:
+
+../../chibios/os/hal/include/tm.h:
+
+../../chibios/os/hal/include/pal.h:
+
+../../chibios/os/hal/platforms/STM32/GPIOv2/pal_lld.h:
+
+../../chibios/os/hal/include/adc.h:
+
+../../chibios/os/hal/platforms/STM32F4xx/adc_lld.h:
+
+../../chibios/os/hal/include/can.h:
+
+../../chibios/os/hal/include/ext.h:
+
+../../chibios/os/hal/include/gpt.h:
+
+../../chibios/os/hal/include/i2c.h:
+
+../../chibios/os/hal/include/icu.h:
+
+../../chibios/os/hal/platforms/STM32/TIMv1/icu_lld.h:
+
+../../chibios/os/hal/platforms/STM32/TIMv1/stm32_tim.h:
+
+../../chibios/os/hal/include/mac.h:
+
+../../chibios/os/hal/platforms/STM32/mac_lld.h:
+
+../../chibios/os/hal/include/pwm.h:
+
+../../chibios/os/hal/platforms/STM32/TIMv1/pwm_lld.h:
+
+../../chibios/os/hal/include/rtc.h:
+
+../../chibios/os/hal/include/serial.h:
+
+../../chibios/os/hal/platforms/STM32/USARTv1/serial_lld.h:
+
+../../chibios/os/hal/include/sdc.h:
+
+../../chibios/os/hal/platforms/STM32/sdc_lld.h:
+
+../../chibios/os/hal/include/spi.h:
+
+../../chibios/os/hal/include/uart.h:
+
+../../chibios/os/hal/include/usb.h:
+
+../../chibios/os/hal/platforms/STM32/OTGv1/usb_lld.h:
+
+../../chibios/os/hal/platforms/STM32/OTGv1/stm32_otg.h:
+
+../../chibios/os/hal/include/mmc_spi.h:
+
+../../chibios/os/hal/include/serial_usb.h:
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/string.h:
 
@@ -182,8 +313,8 @@ c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-no
 
 c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/sys/string.h:
 
-../../chibios/os/kernel/include/chregistry.h:
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/stdlib.h:
 
-../../chibios/os/various/chprintf.h:
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/machine/stdlib.h:
 
-../../chibios/os/hal/include/io_channel.h:
+c:\chibistudio\tools\gnu\ tools\ arm\ embedded\4.7\ 2013q2\bin\../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/include/alloca.h:

@@ -6,13 +6,11 @@
 
 #include "myADC.h"
 
-
-
 /*
  * Global lock for the ADC.
  * I should probably use proper locking mechanisms provided by chibios!
  */
-int running=0;
+int ADCrunning;
 
 
 /*
@@ -61,7 +59,7 @@ static void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {
 
   (void)adcp;
   (void)err;
-  if(running){
+  if(ADCrunning){
     data[p1++]=0;
     overflow++;
   }
@@ -103,7 +101,7 @@ void cmd_measure(BaseSequentialStream *chp, int argc, char *argv[]) {
   (void)argv;
   uint32_t sum=0;
   unsigned int i;
-  if(running){
+  if(ADCrunning){
     chprintf(chp, "Continuous measurement already running\r\n");
     return;
   }
@@ -124,6 +122,36 @@ void cmd_measure(BaseSequentialStream *chp, int argc, char *argv[]) {
   chprintf(chp, "%U\r\n", sum/(ADC_GRP1_BUF_DEPTH/16));
 }
 
+
+uint32_t measure() {
+
+  //(void)argv;
+  uint32_t sum=0;
+  unsigned int i;
+  if(ADCrunning){
+    //chprintf(chp, "Continuous measurement already running\r\n");
+    return;
+  }
+
+
+  adcConvert(&ADCD1, &adcgrpcfg1, samples1, ADC_GRP1_BUF_DEPTH);
+  //prints the first measured value
+  //chprintf(chp, "Measured: %d  ", samples1[0]*16);
+  sum=0;
+  for (i=0;i<ADC_GRP1_BUF_DEPTH;i++){
+      //chprintf(chp, "%d  ", samples1[i]);
+      sum += samples1[i];
+  }
+  //prints the averaged value with two digits precision
+  //chprintf(chp, "%U\r\n", sum/(ADC_GRP1_BUF_DEPTH/16));
+  sum = ((uint64_t)sum)*VREFINT/(ADC_GRP1_BUF_DEPTH/16*VREFMeasured/100);
+
+  return (sum);
+
+}
+
+
+
  /*
   * measures ADC_GRP1_BUF_DEPTH samples and displays all of them
   */
@@ -131,7 +159,7 @@ void cmd_measureDirect(BaseSequentialStream *chp, int argc, char *argv[]) {
 
   (void)argv;
   unsigned int i;
-  if(running){
+  if(ADCrunning){
     chprintf(chp, "Continuous measurement already running\r\n");
     return;
   }
@@ -163,7 +191,7 @@ void cmd_Temperature(BaseSequentialStream *chp, int argc, char *argv[]) {
     chprintf(chp, "Usage: temp\r\n");
     return;
   }
-  if(!running){
+  if(!ADCrunning){
     chprintf(chp, "No Background conversion running\r\n");
     return;
   }
@@ -171,7 +199,7 @@ void cmd_Temperature(BaseSequentialStream *chp, int argc, char *argv[]) {
   int myp1 =  (p1-1+BUFFLEN)%BUFFLEN;
   //Convert to Voltage and then to °C
   thisTemp = (((int64_t)temp[myp1])*VREFINT*400/VREFMeasured-30400)+2500;
-  chprintf(chp, "Temperatur: %d.%2U°C\r\n", thisTemp/100,thisTemp%100);
+  chprintf(chp, "Temperatur: %d.%2U�C\r\n", thisTemp/100,thisTemp%100);
   //temp[p1];
 }
 
@@ -200,7 +228,7 @@ void cmd_measureA(BaseSequentialStream *chp, int argc, char *argv[]) {
   (void)argv;
   uint32_t sum=0;
   unsigned int i;
-  if(running){
+  if(ADCrunning){
     chprintf(chp, "Continuous measurement already running\r\n");
     return;
   }
@@ -297,10 +325,10 @@ void cmd_measureCont(BaseSequentialStream *chp, int argc, char *argv[]) {
   (void)chp;
   (void)argc;
   (void)argv;
-  if(running){
+  if(ADCrunning){
     chprintf(chp, "Continuous measurement already running\r\n");
   }else {
-    running=1;
+    ADCrunning=1;
     adcStartConversion(&ADCD1, &adcgrpcfg2, samples2, ADC_GRP2_BUF_DEPTH);
   }
 }
@@ -313,9 +341,9 @@ void cmd_measureStop(BaseSequentialStream *chp, int argc, char *argv[]) {
   (void)chp;
   (void)argc;
   (void)argv;
-  if(running){
+  if(ADCrunning){
     adcStopConversion(&ADCD1);
-    running=0;
+    ADCrunning=0;
   }
 }
 

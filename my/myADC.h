@@ -1,6 +1,9 @@
 #ifndef MYADC_H_INCLUDED
 #define MYADC_H_INCLUDED
 
+
+uint32_t measure();
+
 void cmd_measure(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_measureA(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_measureDirect(BaseSequentialStream *chp, int argc, char *argv[]);

@@ -91,8 +91,18 @@
 
 #if LWIP_TCP
 
+
+#ifdef LWIP_HTTPD_SSI
+extern void httpd_ssi_init(void);
+#endif
+
+#ifdef LWIP_HTTPD_CGI
+extern void httpd_cgi_init(void);
+#endif
+
+
 #ifndef HTTPD_DEBUG
-#define HTTPD_DEBUG         LWIP_DBG_OFF
+#define HTTPD_DEBUG         LWIP_DBG_ON
 #endif
 
 /** Set this to 1 and add the next line to lwippools.h to use a memp pool
@@ -2443,6 +2453,13 @@ httpd_init_addr(ip_addr_t *local_addr)
   /* initialize callback arg and accept callback */
   tcp_arg(pcb, pcb);
   tcp_accept(pcb, http_accept);
+#if LWIP_HTTPD_SSI
+  httpd_ssi_init();
+#endif
+
+#if LWIP_HTTPD_CGI
+  httpd_cgi_init();
+#endif
 }
 
 /**
